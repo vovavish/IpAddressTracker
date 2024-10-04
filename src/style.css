@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  block-size: 100vh;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background-image: url('../images/pattern-bg-desktop.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.header__title {
+  margin-block-start: 30px;
+  color: white;
+  font-size: clamp(1.5rem, 1.357rem + 0.714vw, 2rem);
+  font-weight: 500;
+}
+
+.header__search {
+  display: flex;
+  justify-content: center;
+  block-size: 50px;
+  inline-size: 100%;
+  margin-block-end: 90px;
+}
+
+.header__search-input {
+  border: none;
+  border-radius: 10px 0 0 10px;
+  padding: 0 24px;
+  font-weight: 400;
+  font-size: 18px;
+  block-size: 100%;
+  inline-size: 440px;
+}
+
+.header__search-button {
+  border: none;
+  border-radius: 0 10px 10px 0;
+  background-color: #000;
+  cursor: pointer;
+  block-size: 100%;
+  inline-size: 50px;
+}
+
+.header__search-button_img {
+  color: white;
+}
+
+.header__search-information {
+  position: absolute;
+  display: flex;
+  margin-inline: 200px;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: #fff;
+  max-inline-size: 1000px;
+  inline-size: 80%;
+  transform: translateY(-50%);
+  top: 100%;
+  gap: 20px;
+  z-index: 1;
+}
+
+.header__search-information-block {
+  border-right: 1px solid hsl(0, 0%, 59%);
+  flex-basis: 25%;
+}
+
+.header__search-information-block:last-child {
+  border-right: none;
+}
+
+.header__search-information-block_title {
+  color: hsl(0, 0%, 59%);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.header__search-information-block_text {
+  color: hsl(0, 0%, 17%);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.map {
+  min-height: calc(100vh - 238px);
+  z-index: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    background-image: url('../images/pattern-bg-mobile.png');
+  }
+
+  .header__search {
+    margin-block-end: 160px;
+  }
+
+  .header__search-input {
+    max-inline-size: 70%;
+  }
+
+  .map {
+    min-height: calc(100vh - 308px);
+    z-index: 0;
+  }
+
+  .header__search-information {
+    flex-direction: column;
+  }
+
+  .header__search-information {
+    align-items: center;
+  }
+
+  .header__search-information-block {
+    border-right: none;
+  }
+
+  .header__search-information-block_title {
+    text-align: center;
+  }
+
+  .header__search-information-block_text {
+    text-align: center;
+  }
+}
